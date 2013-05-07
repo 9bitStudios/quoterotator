@@ -14,7 +14,6 @@
     $.fn.quoterotator = function (options) {
 
         var defaults = $.extend({
-			duration: 3000,
 			quotes: [
 				{
 					text: "Example text 1...",
@@ -31,7 +30,8 @@
 					author: "Example Author 3",
 					subtitle: "Example Subtitle 3..."
 				}				
-			]
+			],
+			duration: 3000			
         }, options);
         
 		/******************************
@@ -43,9 +43,7 @@
 		var quotes = settings.quotes;
 		var currentIndex = 0;
 		
-		var quoteText = object.find('.quote').find('.quoteText');
-		var quoteAuthor = object.find('.quoteAuthor');
-		var quoteSubtitle = object.find('.quoteSubtitle');
+		var quoteText, quoteAuthor, quoteSubtitle; // to be assigned to div elements later.
 		
 		/******************************
 		Public Methods
@@ -55,8 +53,22 @@
         	
 			init: function() {
 				return this.each(function () {
+					methods.appendHTML();
 					methods.initializeItems();
 				});
+			},
+			
+			/******************************
+			Append HTML
+			*******************************/			
+			
+			appendHTML: function() {
+			
+				var html = '<div class="quote"><div class="quoteText"></div></div><div class="quoteAuthor"></div><div class="quoteSubtitle"></div>'
+				object.append(html);
+				quoteText = object.find('.quote').find('.quoteText');
+				quoteAuthor = object.find('.quoteAuthor');
+				quoteSubtitle = object.find('.quoteSubtitle');				
 			},
 			
 			/******************************

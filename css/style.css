@@ -1,11 +1,11 @@
 body {
 font-family: Arial;
-background:#999;
+background:url('../images/background.png');
 color:#fff;
 }
 
 .quoteRotator {
-
+width:40%;
 }
 
 .quoteRotator .quote {

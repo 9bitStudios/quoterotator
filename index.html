@@ -1,9 +1,6 @@
 
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,18 +13,9 @@
 
 <h1>Quote Rotator</h1>
 
-	<p>A simple quote rotating testimonial jQuery plugin that rotates quotes...</p>
-	
+	<p>A simple quote rotating testimonial jQuery plugin that rotates quotes. All you have to do is call it on a &lt;div&gt;...</p>
 
-	<div id="quoteSection" class="quoteRotator">
-		
-		<div class="quote">
-			<div class="quoteText"></div>
-		</div>
-		<div class="quoteAuthor"></div>
-		<div class="quoteSubtitle"></div>		
-		
-	</div>
+	<div id="quoteSection" class="quoteRotator"></div>
 	
 </div>
  
@@ -36,7 +24,26 @@
 
 $(document).ready(function(){
 
-	$('#quoteSection').quoterotator();
+	$('#quoteSection').quoterotator({
+		quotes: [
+			{
+				text: 'Pellentesque fermentum dapibus augue, sit amet posuere lectus dignissim eget. Duis id libero magna, vel euismod ligula. Maecenas in tortor arcu. Aenean ornare, arcu eu viverra molestie, nibh odio commodo nisl, faucibus vulputate massa nunc nec tellus. Suspendisse potenti.',
+				author: 'John Doe',
+				subtitle: 'VP of Sales, Acme Computers',
+			},
+			{
+				text: 'Maecenas in tortor arcu. Aenean ornare, arcu eu viverra molestie, nibh odio commodo nisl, faucibus vulputate massa nunc nec tellus. Suspendisse potenti. Duis id libero magna, vel euismod ligula. ',
+				author: 'Jay Peterman',
+				subtitle: 'CEO, Peterman Catalog',
+			},		
+			{
+				text: 'Nam congue arcu at urna dictum eu tempor mi ultricies. Maecenas metus nulla, blandit in tristique in, venenatis congue arcu. Donec lacus velit, sodales non ornare ac, ullamcorper a massa. Nunc egestas, lectus non pharetra sodales, sem arcu tempor tellus, nec tempus velit massa cursus ipsum. ',
+				author: 'Michael Scott',
+				subtitle: 'Branch Manager, Dunder Mifflin Scranton',
+			},		
+			
+		]
+	});
 	
 });
 
