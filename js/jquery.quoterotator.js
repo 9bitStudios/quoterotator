@@ -14,7 +14,24 @@
     $.fn.quoterotator = function (options) {
 
         var defaults = $.extend({
-			duration: 3000
+			duration: 3000,
+			quotes: [
+				{
+					text: "Example text 1...",
+					author: "Example Author 1",
+					subtitle: "Example Subtitle 1..."
+				},
+				{
+					text: "Example text 2...",
+					author: "Example Author 2",
+					subtitle: "Example Subtitle 2..."
+				},
+				{
+					text: "Example text 3...",
+					author: "Example Author 3",
+					subtitle: "Example Subtitle 3..."
+				}				
+			]
         }, options);
         
 		/******************************
@@ -23,8 +40,12 @@
         
         var object = $(this);
 		var settings = $.extend(defaults, options);
-		var quotes = object.children();
+		var quotes = settings.quotes;
 		var currentIndex = 0;
+		
+		var quoteText = object.find('.quote').find('.quoteText');
+		var quoteAuthor = object.find('.quoteAuthor');
+		var quoteSubtitle = object.find('.quoteSubtitle');
 		
 		/******************************
 		Public Methods
@@ -43,15 +64,45 @@
 			*******************************/			
 			
 			initializeItems: function() {
-				methods.showNextQuote();
-				
+			
+				methods.setQuote();
+			
+				setInterval(function(){
+					methods.showNextQuote();
+				}, settings.duration);
+			
 			},			
 			
-			showNextQuote: function() {
-				quotes.eq(currentIndex % quotes.length).fadeIn(1000).delay(settings.duration).fadeOut(1000, methods.showNextQuote);
-				currentIndex++;
-			}
+			/******************************
+			Show Next Quote
+			*******************************/			
 			
+			showNextQuote: function() {
+			
+				if(currentIndex == quotes.length - 1) {
+					currentIndex = 0;
+				}
+				else {
+					currentIndex++;
+				}
+		
+				quoteText.add(quoteAuthor).add(quoteSubtitle).fadeOut('slow', function(){
+								
+					methods.setQuote();
+				
+				}).fadeIn();
+
+			},
+			
+			/******************************
+			Set Quote
+			*******************************/			
+			
+			setQuote: function() {
+				quoteText.html(quotes[currentIndex].text);
+				quoteAuthor.html(quotes[currentIndex].author);	
+				quoteSubtitle.html(quotes[currentIndex].subtitle);				
+			},
 		
         };
         

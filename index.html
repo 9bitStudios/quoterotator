@@ -14,30 +14,18 @@
 
 <body>
 
-<h1>QuoteRotator</h1>
+<h1>Quote Rotator</h1>
 
 	<p>A simple quote rotating testimonial jQuery plugin that rotates quotes...</p>
 	
 
-	<div id="p1" class="quoteRotator">
+	<div id="quoteSection" class="quoteRotator">
 		
 		<div class="quote">
-			<span class="quoteText">Quisque viverra elit a dui pretium elementum. Nulla eu lacus malesuada nisi tristique ullamcorper sed vitae eros.</span>
-			<span class="quoteAuthor">Mike Jones</span>
-			<span class="quoteSubtitle">Programmer</span>	
+			<div class="quoteText"></div>
 		</div>
-
-		<div class="quote">
-			<span class="quoteText">Donec et ipsum ante. Suspendisse in urna sed urna ultricies aliquam. Nam vitae libero lectus, sed egestas nisi. Etiam et porttitor ante. Suspendisse id est eget diam vulputate sagittis. Maecenas ac nibh ante. Nulla vehicula gravida interdum. Proin in urna nec quam adipiscing vestibulum in eu lacus.</span>
-			<span class="quoteAuthor">Steve C</span>
-			<span class="quoteSubtitle">Something</span>	
-		</div>
-
-		<div class="quote">
-			<span class="quoteText">Aliquam vehicula magna sit amet arcu interdum ultrices.</span>
-			<span class="quoteAuthor">Paul D</span>
-			<span class="quoteSubtitle">CEO</span>	
-		</div>		
+		<div class="quoteAuthor"></div>
+		<div class="quoteSubtitle"></div>		
 		
 	</div>
 	
@@ -48,7 +36,7 @@
 
 $(document).ready(function(){
 
-	$('#p1').quoterotator();
+	$('#quoteSection').quoterotator();
 	
 });
 
