@@ -113,7 +113,11 @@
 			setQuote: function() {
 				quoteText.html(quotes[currentIndex].text);
 				quoteAuthor.html(quotes[currentIndex].author);	
-				quoteSubtitle.html(quotes[currentIndex].subtitle);				
+				
+				if(quotes[currentIndex].subtitle)
+					quoteSubtitle.html(quotes[currentIndex].subtitle);	
+				else
+					quoteSubtitle.html('');
 			},
 		
         };
