@@ -1,26 +1,25 @@
 body {
-font-family: Arial;
-background:url('../images/background.png');
-color:#fff;
+    font-family: Arial;
+    background:url('../images/background.png');
+    color:#fff;
 }
 
 .quoteRotator {
-width:40%;
+    width:40%;
 }
 
 .quoteRotator .quote {
-display:block;
-padding:10px;
-
-background:rgba(250,250,250,1);
-color:#333;
-position:relative;
-margin-bottom:20px;
-font-size:12px;
-border-radius: 10px; 
--moz-border-radius: 10px;  
--webkit-border-radius: 10px; 
--khtml-border-radius: 10px; 
+    display:block;
+    padding:10px;
+    background:rgba(250,250,250,1);
+    color:#333;
+    position:relative;
+    margin-bottom:20px;
+    font-size:12px;
+    border-radius: 10px; 
+    -moz-border-radius: 10px;  
+    -webkit-border-radius: 10px; 
+    -khtml-border-radius: 10px; 
 }
 
 .quoteRotator .quote .quoteText {
@@ -28,23 +27,23 @@ border-radius: 10px;
 }
 
 .quoteRotator .quoteAuthor {
-display:block;
-font-weight:bold;
+    display:block;
+    font-weight:bold;
 }
 
 .quoteRotator .quoteSubtitle {
-display:block;
-font-size:12px;
+    display:block;
+    font-size:12px;
 }
 
 .quoteRotator .quote:after {
-	border:solid;
-	border-color:rgba(250,250,250,1) transparent;
-	border-width:13px 0px 0 19px;
-	content:"";
-	display:block;
-	position:absolute;
-	left:15px;
-	top:100%;
-	z-index:9
+    border:solid;
+    border-color:rgba(250,250,250,1) transparent;
+    border-width:13px 0px 0 19px;
+    content:"";
+    display:block;
+    position:absolute;
+    left:15px;
+    top:100%;
+    z-index:9
 }
